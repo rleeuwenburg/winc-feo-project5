@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SongOverview extends Component {
+class SongOverview extends React.Component {
   constructor() {
     super();
     this.state = {
