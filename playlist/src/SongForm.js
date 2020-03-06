@@ -23,8 +23,18 @@ class SongForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    alert('Submit geklikt');
-    // addSong={this.addSong};
+    this.props.onSubmit({
+      title: this.state.title,
+      artist: this.state.artist,
+      genre: this.state.genre,
+      rating: this.state.rating
+    });
+    this.setState({
+      title: '',
+      artist: '',
+      genre: '',
+      rating: ''
+    });
   }
 
   render() {

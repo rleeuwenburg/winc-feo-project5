@@ -1,6 +1,5 @@
 import React from 'react';
 import SongForm from './SongForm';
-import SongList from './SongList';
 
 class SongOverview extends React.Component {
   constructor() {
@@ -11,19 +10,16 @@ class SongOverview extends React.Component {
     this.addSong = this.addSong.bind(this);
   }
 
-  addSong = song => {
+  addSong() {
     console.log('ik ga iets adden');
-    const newSongs = [song, ...this.state.songs];
-    this.setState({
-      songs: newSongs
-    });
-  };
+  }
+  // = song => {
+  // doe iets om de state aan te passen
 
   render() {
     return (
       <div>
-        <SongForm onSubmit={this.addSong} />
-
+        <SongForm addSong={this.addSong} />
         <table style={{ width: '100%' }}>
           <thead>
             <tr className='song-header'>
@@ -33,7 +29,16 @@ class SongOverview extends React.Component {
               <th className='song-row__header'>Rating</th>
             </tr>
           </thead>
-          <SongList songs={this.state.songs} />
+
+          <tbody>
+            {/* <SongList songs={this.state.songs} /> */}
+            <tr className='song-row'>
+              <th className='song-row__item'>Whatever Title</th>
+              <th className='song-row__item'>Whatever Artist</th>
+              <th className='song-row__item'>Whatever Genre</th>
+              <th className='song-row__item'>Whatever Rating</th>
+            </tr>
+          </tbody>
         </table>
       </div>
     );

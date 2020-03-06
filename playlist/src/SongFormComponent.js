@@ -42,10 +42,10 @@ function SongFormComponent(props) {
         <option value='5'>5</option>
       </select>
       <button>Submit</button>
-      <h2>Test Title: {props.song.title}</h2>
+      {/* <h2>Test Title: {props.song.title}</h2>
       <h2>Test Artist: {props.song.artist}</h2>
       <h2>Test Genre: {props.song.genre}</h2>
-      <h2>Test Rating: {props.song.rating}</h2>
+      <h2>Test Rating: {props.song.rating}</h2> */}
     </form>
   );
 }
